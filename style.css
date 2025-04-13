@@ -1,0 +1,71 @@
+html, body {
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+button{
+    cursor: pointer;
+}
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.modal {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 99;
+    background-color: rgba(0, 0, 0, .3);
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    overflow-y: auto;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity .4s , visibility .4s ;
+}
+.modal.open{
+    visibility: visible;
+    opacity: 1;
+}
+.modalBox {
+    max-width: 500px;
+    padding: 50px;
+    z-index: 10000;
+    margin: 30px 15px;
+    background-color: #fff;
+    box-shadow: 0 0 17px -7px rgba(34, 60, 80, 0.2);
+    transform: scale(0);
+    transition: transform .8s ;
+}
+.modal.open .modalBox{
+    transform: scale(1);
+}
+.closeBtn{
+    border: none;
+    background-color: transparent;
+    padding: 5px;
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    transition: fill .8s ;
+}
+.closeBtn svg path {
+transition: fill .4s ;
+}
+.closeBtn:hover svg path{
+    fill: rgba(0, 73, 255, 0.82);
+}
